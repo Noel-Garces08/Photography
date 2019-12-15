@@ -1,0 +1,72 @@
+@import "reset.css";
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Libre Franklin', 'sans-serif';
+	-webkit-font-smoothing: antialised;
+}
+
+.container {
+	width: 1300px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+#jumbo {
+	background: url('../images/landingPage.jpg') no-repeat center center;
+	background-size: cover;
+	color: rgb(255, 255, 255);
+	height: 100vh;
+	color: #fff;
+}
+
+#jumbo .jumbo-container {
+	position: relative;
+	top: 210px;
+}
+
+#jumbo .jumbo-content {
+}
+
+#jumbo .jumbo-content h1 {
+	font-size: 5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 70px;
+}
+
+#jumbo .jumbo-content p {
+	font-size: 2rem;
+	margin-bottom: 65px;
+}
+
+#jumbo .jumbo-buttons {
+}
+
+#jumbo .jumbo-buttons:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#jumbo .jumbo-buttons .left-button {
+	font-size: 1.5rem;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #fff;
+	padding: 15px 35px;
+	display: inline-block;
+	float: left;
+	margin-right: 30px;
+}
+
+#jumbo .jumbo-buttons .right-button {
+	font-size: 1.5rem;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #fff;
+	padding: 15px 30px;
+	display: inline-block;
+	float: left;
+}

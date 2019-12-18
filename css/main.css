@@ -135,7 +135,7 @@ header p {
 	font-size: .9rem;
 	font-weight: 500;
 	opacity: .5;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 }
 
 /* 
@@ -156,6 +156,29 @@ header p {
 }
 
 #photos img {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+}
+
+/* 
+///////////////////////////////////////////////////
+*/
+
+#projects .projects-container {
+	line-height: 0;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 0px;
+	-moz-column-count: 3;
+	-moz-column-gap: 0px;
+	column-count: 3;
+	column-gap: 0px;
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#projects img {
 	width: 100%;
 	height: auto;
 	padding: 10px;

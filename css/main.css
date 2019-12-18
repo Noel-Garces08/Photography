@@ -1,4 +1,9 @@
 @import "reset.css";
+:root {
+	--white: #fff;
+	--black: #272727;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -14,7 +19,8 @@ body {
 }
 
 #jumbo {
-	background: url('../images/landingPage.jpg') no-repeat center center;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('../images/landingPage.jpg') no-repeat center center;
 	background-size: cover;
 	color: rgb(255, 255, 255);
 	height: 100vh;
@@ -23,7 +29,7 @@ body {
 
 #jumbo .jumbo-container {
 	position: relative;
-	top: 210px;
+	top: 250px;
 }
 
 #jumbo .jumbo-content {
@@ -31,7 +37,7 @@ body {
 
 #jumbo .jumbo-content h1 {
 	font-size: 5rem;
-	font-weight: 700;
+	font-weight: 500;
 	text-transform: uppercase;
 	margin-bottom: 70px;
 }
@@ -59,6 +65,7 @@ body {
 	display: inline-block;
 	float: left;
 	margin-right: 30px;
+	transition: all .4s ease-in-out;
 }
 
 #jumbo .jumbo-buttons .right-button {
@@ -69,4 +76,87 @@ body {
 	padding: 15px 30px;
 	display: inline-block;
 	float: left;
+	transition: all .4s ease-in-out;
+}
+
+#jumbo .jumbo-buttons .left-button:hover,
+#jumbo .jumbo-buttons .right-button:hover {
+	background: var(--white);
+	color: var(--black);
+}
+
+/* 
+///////////////////////////////////////////////////////////////////
+*/
+
+header {
+	padding: 55px 0 55px;
+	text-align: center;
+	color: var(--black);
+}
+
+header a {
+	text-decoration: none;
+	color: var(--black);
+}
+
+header .logo-area {
+	font-size: 3.3rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+header .logo-area a {
+}
+
+header .menu {
+	margin-bottom: 40px;
+}
+
+header .menu ul {
+}
+
+header .menu ul li {
+	display: inline-block;
+	margin: 0 30px;
+	font-weight: 300;
+}
+
+header .menu ul li:hover {
+	/* font-weight: 500; */
+	opacity: .7;
+}
+
+header .menu ul li a {
+}
+
+header p {
+	font-size: .9rem;
+	font-weight: 500;
+	opacity: .5;
+	letter-spacing: 3px;
+}
+
+/* 
+///////////////////////////////////////////////////////////////////
+*/
+
+#photos .photos-container {
+	line-height: 0;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 0px;
+	-moz-column-count: 3;
+	-moz-column-gap: 0px;
+	column-count: 3;
+	column-gap: 0px;
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#photos img {
+	width: 100%;
+	height: auto;
+	padding: 10px;
 }

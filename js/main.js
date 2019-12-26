@@ -1,6 +1,17 @@
+// VARIABLES
 var projects = document.querySelectorAll('.project');
 var projectsInfo = document.querySelectorAll('.project-info');
 
+var navigationLinks = document.querySelectorAll('.menu > ul > li > a');
+
+// Navigation page
+navigationLinks.forEach(function(link) {
+	link.addEventListener('click', function() {
+		link.classList.add('menu-link-active');
+	});
+});
+
+//Projects page
 projects.forEach(function(project) {
 	removeProjectInfoActive(project);
 
@@ -14,7 +25,3 @@ function removeProjectInfoActive(project) {
 		project.firstElementChild.classList.remove('project-info-active');
 	};
 }
-
-// project.onmouseout = function(project) {
-// 	project.firstElementChild.classList.remove('project-info-active');
-// };

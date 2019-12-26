@@ -322,3 +322,48 @@ header p {
 
 #gear ul li a {
 }
+
+/* 
+////////////////////////////////////////////////////////
+*/
+
+#contact {
+}
+
+#contact .info-box {
+	padding: 0 90px;
+}
+
+#contact .info-box h1 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	margin-bottom: 35px;
+}
+
+#contact .info-box p {
+	font-size: 1.2rem;
+	font-weight: 300;
+	/* opacity: .5; */
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+#contact form {
+	padding: 0 90px;
+}
+
+#contact form input {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	padding: 15px 15px;
+}
+
+#contact form textarea {
+	width: 100%;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	padding: 15px 15px;
+}

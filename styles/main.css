@@ -149,6 +149,17 @@ main {
 	line-height: 2rem;
 }
 
+.contact-info .contact-icons {
+	padding: 2rem 0 0 0;
+	display: flex;
+	justify-content: space-between;
+	width: 15%;
+}
+
+.contact-info .contact-icons a {
+	font-size: 1.2rem;
+}
+
 .contact-form .field-container {
 	display: flex;
 	flex-direction: column;
@@ -186,6 +197,12 @@ main {
 
 .contact-form .field-container label {
 	line-height: 2rem;
+}
+
+.contact-form button {
+	background: #333333;
+	color: #f5f5f5;
+	padding: 0.7rem 1.7rem;
 }
 
 /* Footer Styles */
@@ -262,6 +279,16 @@ footer .footer-icons-container a {
 
 	main {
 		padding: 10% 2.5%;
+	}
+
+	.contact-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2rem;
+	}
+
+	.contact-info .contact-icons {
+		width: 10%;
 	}
 }
 

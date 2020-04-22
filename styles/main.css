@@ -16,17 +16,19 @@ body {
 
 nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
+	padding: 0 1.5rem;
 	min-height: 10vh;
 	background: #f5f5f5;
-	color: #6e5494;
+	color: #333333;
 }
 
 nav .nav-logo {
 	font-size: 1.5rem;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.2rem;
+	text-transform: uppercase;
 }
 
 nav .nav-links {
@@ -42,6 +44,7 @@ nav .nav-links {
 	width: 50%;
 	transform: translateX(100%);
 	transition: transform 0.5s ease-in;
+	z-index: 2;
 }
 
 nav .nav-active {
@@ -51,6 +54,7 @@ nav .nav-active {
 nav .nav-links a {
 	text-transform: capitalize;
 	font-size: 1.3rem;
+	font-weight: 300;
 	letter-spacing: 0.1rem;
 	opacity: 0;
 }
@@ -63,7 +67,7 @@ nav .burger {
 nav .burger div {
 	width: 25px;
 	height: 3px;
-	background: #6e5494;
+	background: rgb(51, 51, 51);
 	margin: 5px;
 	pointer-events: none;
 	transition: all 0.3s ease;
@@ -80,7 +84,7 @@ nav .burger div {
 }
 
 main {
-	padding: 0 1.5rem;
+	padding: 3rem 1.5rem;
 }
 
 .photoshoots-container {
@@ -91,12 +95,40 @@ main {
 }
 
 .photoshoots-container .photoshoot {
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
 }
 
 .photoshoots-container .photoshoot img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.photoshoots-container .photoshoot-overlay {
+	position: absolute;
+	transform: translateY(100%);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	transition: all 0.5s ease-in;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.photoshoots-container .photoshoot-overlay h2 {
+	font-size: 1.5rem;
+	color: #f5f5f5;
+}
+
+.photoshoots-container .photoshoot-overlay.active {
+	background: #0e0e0ebe;
+	transform: translateY(0);
+	opacity: 1;
 }
 
 /* Footer Styles */
@@ -116,7 +148,7 @@ footer .footer-icons-container {
 
 footer .footer-icons-container a {
 	font-size: 1.5rem;
-	color: #6e5494;
+	color: #333333;
 }
 
 /* @custom-media --viewport-4 (min-width: 480px);
@@ -127,6 +159,10 @@ footer .footer-icons-container a {
 }
 
 @media screen and (min-width: 768px) {
+	main {
+		padding: 3.5rem 1.5rem;
+	}
+
 	nav .nav-logo {
 		font-size: 2.5rem;
 	}
@@ -134,9 +170,17 @@ footer .footer-icons-container a {
 	.photoshoots-container {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+
+	footer .footer-icons-container {
+		width: 10%;
+	}
 }
 
 @media screen and (min-width: 992px) {
+	nav {
+		padding: 0 2.5%;
+	}
+
 	nav .nav-logo {
 		font-size: 2rem;
 	}
@@ -157,6 +201,10 @@ footer .footer-icons-container a {
 
 	nav .burger {
 		display: none;
+	}
+
+	main {
+		padding: 10% 2.5%;
 	}
 }
 

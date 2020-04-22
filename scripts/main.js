@@ -30,4 +30,24 @@ const navSlide = () => {
 	});
 };
 
-navSlide();
+const photoshootOverlay = () => {
+	const photoshoots = document.querySelectorAll('.photoshoot');
+	photoshoots.forEach((photoshoot) => {
+		const photoshootOverlay = photoshoot.querySelector(
+			'.photoshoot-overlay'
+		);
+		photoshoot.addEventListener('mouseover', () => {
+			photoshootOverlay.classList.add('active');
+		});
+		photoshoot.addEventListener('mouseout', () => {
+			photoshootOverlay.classList.remove('active');
+		});
+	});
+};
+
+const app = () => {
+	navSlide();
+	photoshootOverlay();
+};
+
+app();

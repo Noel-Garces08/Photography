@@ -141,12 +141,14 @@ main {
 	font-size: 2rem;
 	font-weight: 500;
 	margin-bottom: 3.5rem;
+	color: #333333;
 }
 
 .contact-info p {
 	font-size: 1rem;
 	font-weight: 200;
 	line-height: 2rem;
+	color: #333333;
 }
 
 .contact-info .contact-icons {
@@ -158,6 +160,7 @@ main {
 
 .contact-info .contact-icons a {
 	font-size: 1.2rem;
+	color: #333333;
 }
 
 .contact-form .field-container {
@@ -169,6 +172,7 @@ main {
 .contact-form .field-container p {
 	font-weight: 500;
 	line-height: 2rem;
+	color: #333333;
 }
 
 .contact-form .field-container .name-fields {
@@ -176,6 +180,7 @@ main {
 	grid-template-columns: 49% 49%;
 	grid-gap: 2%;
 	flex-direction: column;
+	color: #333333;
 }
 
 .contact-form .field-container .field {
@@ -197,6 +202,7 @@ main {
 
 .contact-form .field-container label {
 	line-height: 2rem;
+	color: #333333;
 }
 
 .contact-form button {

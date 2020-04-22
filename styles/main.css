@@ -132,6 +132,62 @@ main {
 	opacity: 1;
 }
 
+/* * Contact Section */
+.contact-container .contact-info {
+	margin-bottom: 2rem;
+}
+
+.contact-info h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 3.5rem;
+}
+
+.contact-info p {
+	font-size: 1rem;
+	font-weight: 200;
+	line-height: 2rem;
+}
+
+.contact-form .field-container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.2rem;
+}
+
+.contact-form .field-container p {
+	font-weight: 500;
+	line-height: 2rem;
+}
+
+.contact-form .field-container .name-fields {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	grid-gap: 2%;
+	flex-direction: column;
+}
+
+.contact-form .field-container .field {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-form .field-container input,
+.contact-form .field-container textarea {
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 0.5rem;
+	border: 1px solid #33333377;
+}
+.contact-form .field-container textarea::placeholder {
+	color: #333333;
+	line-height: 1.9rem;
+}
+
+.contact-form .field-container label {
+	line-height: 2rem;
+}
+
 /* Footer Styles */
 footer {
 	display: flex;

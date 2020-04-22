@@ -295,8 +295,12 @@ footer .footer-icons-container a {
 }
 
 @media screen and (min-width: 992px) {
+	main {
+		padding: 10% 2.5%;
+	}
+
 	#flor {
-		padding: 3rem 1.5rem;
+		padding: 3rem 2.5%;
 	}
 
 	nav {
@@ -323,10 +327,6 @@ footer .footer-icons-container a {
 
 	nav .burger {
 		display: none;
-	}
-
-	main {
-		padding: 10% 2.5%;
 	}
 
 	.contact-container {

@@ -36,13 +36,13 @@ nav .nav-links {
 	right: 0;
 	top: 10vh;
 	height: calc(100% - 10vh);
-	background: #dfd5e0;
+	background: #f5f5f5;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	/* justify-content: space-evenly; */
 	justify-content: space-around;
-	width: 50%;
+	width: 100%;
 	transform: translateX(100%);
 	transition: transform 0.5s ease-in;
 	z-index: 2;
@@ -55,7 +55,7 @@ nav .nav-active {
 nav .nav-links a {
 	text-transform: capitalize;
 	font-size: 1.3rem;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.1rem;
 	opacity: 0;
 }

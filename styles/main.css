@@ -19,6 +19,23 @@ main {
 	padding: 3rem 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+	main {
+		padding: 3.5rem 1.5rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	#events,
+	#contact {
+		padding: 10% 2.5%;
+	}
+
+	#flor {
+		padding: 3rem 2.5%;
+	}
+}
+
 /* * NAVIGATION */
 nav {
 	display: flex;
@@ -90,6 +107,40 @@ nav .burger div {
 	transform: rotate(45deg) translate(-5px, -6px);
 }
 
+@media screen and (min-width: 768px) {
+	nav .nav-logo {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	nav {
+		padding: 0 2.5%;
+	}
+
+	nav .nav-logo {
+		font-size: 2rem;
+	}
+
+	nav .nav-links {
+		flex-direction: row;
+		transform: translateX(0);
+		width: 40%;
+		position: static;
+		height: auto;
+		background: transparent;
+	}
+
+	nav .nav-links a {
+		opacity: 1;
+		animation: none;
+	}
+
+	nav .burger {
+		display: none;
+	}
+}
+
 /* * FLOR SECTION */
 .flor-container .flor-img {
 	height: 20rem;
@@ -112,6 +163,24 @@ nav .burger div {
 	font-weight: 200;
 	line-height: 2rem;
 	color: #333333;
+}
+
+@media screen and (min-width: 768px) {
+	.flor-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2rem;
+	}
+
+	.flor-container .flor-img {
+		height: 27rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.flor-container .flor-img {
+		height: 35rem;
+	}
 }
 
 /* * EVENTS SECTION  */
@@ -157,6 +226,15 @@ nav .burger div {
 	background: #0e0e0ebe;
 	transform: translateY(0);
 	opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+	.photoshoots-container {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (min-width: 992px) {
 }
 
 /* * CONTACT SECTION */
@@ -239,6 +317,21 @@ nav .burger div {
 	padding: 0.7rem 1.7rem;
 }
 
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+	.contact-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2rem;
+	}
+
+	.contact-info .contact-icons {
+		width: 10%;
+	}
+}
+
 /* * FOOTER SECTION */
 footer {
 	display: flex;
@@ -259,14 +352,21 @@ footer .footer-icons-container a {
 	color: #333333;
 }
 
+@media screen and (min-width: 768px) {
+	footer .footer-icons-container {
+		width: 10%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+}
+
 /* @custom-media --viewport-4 (min-width: 480px);
 @custom-media --viewport-7 (min-width: 768px);
 @custom-media --viewport-9 (min-width: 992px);
 @custom-media --viewport-12 (min-width: 1200px); */
-@media screen and (min-width: 480px) {
-}
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
 	main {
 		padding: 3.5rem 1.5rem;
 	}
@@ -292,9 +392,9 @@ footer .footer-icons-container a {
 	footer .footer-icons-container {
 		width: 10%;
 	}
-}
+} */
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
 	main {
 		padding: 10% 2.5%;
 	}
@@ -342,7 +442,7 @@ footer .footer-icons-container a {
 	.flor-container .flor-img {
 		height: 35rem;
 	}
-}
+} */
 
 /* Animations */
 @keyframes navLinkFadeIn {

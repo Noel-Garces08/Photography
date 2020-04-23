@@ -1,4 +1,4 @@
-const navSlide = () => {
+function navSlide() {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');
 	const navLinks = nav.querySelectorAll('li a');
@@ -28,9 +28,52 @@ const navSlide = () => {
 			}
 		});
 	});
-};
+}
 
-const photoshootOverlay = () => {
+// * Load thubnails for Event Page
+function loadThumbnails() {
+	const events = [
+		'Christmas-Downtown',
+		'Leonardo-Graduation',
+		'Twink-Forest',
+	];
+	const eventImages = [
+		{
+			name: 'christmas-downtown-',
+			amount: 2,
+		},
+		{
+			name: 'leonardo-graduation-',
+			amount: 1,
+		},
+		{
+			name: 'twink-forest-',
+			amount: 1,
+		},
+	];
+
+	if (window.location.pathname === '/index.html') {
+		let eventsThumbnail = ``;
+		events.forEach((event, index) => {
+			eventsThumbnail += `
+						<div class="photoshoot">
+							<img src="./events/${event}/${eventImages[index].name}1.JPG" alt="">
+							<div class="photoshoot-overlay"> 
+								<h2>${event.replace(/-/g, ' ')}</h2>
+								<a href='./pages/event.html'> View All Photos </a>
+							</div>
+						</div>`;
+			document.querySelector(
+				'.photoshoots-container'
+			).innerHTML = eventsThumbnail;
+		});
+
+		photoshootOverlay();
+		setThumbnailOnClickListener(events, eventImages);
+	}
+}
+
+function photoshootOverlay() {
 	const photoshoots = document.querySelectorAll('.photoshoot');
 	photoshoots.forEach((photoshoot) => {
 		const photoshootOverlay = photoshoot.querySelector(
@@ -43,11 +86,53 @@ const photoshootOverlay = () => {
 			photoshootOverlay.classList.remove('active');
 		});
 	});
-};
+}
 
-const app = () => {
+function setThumbnailOnClickListener(events, eventImages) {
+	const thumbnails = document.querySelectorAll('.photoshoot-overlay');
+	thumbnails.forEach((thumbnail, index) => {
+		thumbnail.addEventListener('click', () => {
+			const imagesArray = [];
+			for (let i = 1; i <= eventImages[index].amount; i++) {
+				imagesArray.push(`${eventImages[index].name}${i}`);
+			}
+
+			const eventData = {
+				event: events[index],
+				imagesArray,
+			};
+			localStorage.setItem('event', JSON.stringify(eventData));
+		});
+	});
+}
+
+function loadEventPhotos() {
+	const event = JSON.parse(localStorage.getItem('event'));
+	let eventPhotos = ``;
+	console.log(event);
+	event.imagesArray.forEach((img) => {
+		eventPhotos += `
+					<div class="event">
+						<img src="./../events/${event.event}/${img}.JPG" alt="">
+					</div>`;
+		document.querySelector('.photos-container').innerHTML = eventPhotos;
+	});
+}
+function app() {
 	navSlide();
-	photoshootOverlay();
-};
+	loadThumbnails();
+	if (window.location.pathname === '/pages/event.html') loadEventPhotos();
+}
 
 app();
+
+// for (let i = 1; i <= eventImages[index].amount; i++) {
+// 	const eventThumbnail = `
+// 			<div class="photoshoot">
+//                 <img src="./events/${event}/graduation.JPG" alt="">
+//                 <div class="photoshoot-overlay">
+//                     <h2>Rose Park</h2>
+//                 </div>
+//             </div>`
+// 	console.log(`${eventImages[index].name}${i}`);
+// }

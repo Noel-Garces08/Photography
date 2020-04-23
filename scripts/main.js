@@ -120,7 +120,6 @@ function setThumbnailOnClickListener(events, eventImages) {
 function loadEventPhotos() {
 	const event = JSON.parse(localStorage.getItem('event'));
 	let eventPhotos = ``;
-	console.log(event);
 	event.imagesArray.forEach((img) => {
 		eventPhotos += `
 					<div class="event">

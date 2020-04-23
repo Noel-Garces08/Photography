@@ -75,7 +75,6 @@ function loadThumbnails() {
 
 function photoshootOverlay() {
 	const photoshoots = document.querySelectorAll('.photoshoot');
-	removeOverlays(photoshoots);
 	photoshoots.forEach((photoshoot) => {
 		const photoshootOverlay = photoshoot.querySelector(
 			'.photoshoot-overlay'
@@ -87,16 +86,6 @@ function photoshootOverlay() {
 		photoshoot.addEventListener('mouseout', () => {
 			photoshootOverlay.classList.remove('active');
 		});
-	});
-}
-
-function removeOverlays(photoshoots) {
-	photoshoots.forEach((photoshoot) => {
-		const photoshootOverlay = photoshoot.querySelector(
-			'.photoshoot-overlay'
-		);
-		photoshootOverlay.classList.remove('active');
-		console.log('removing');
 	});
 }
 

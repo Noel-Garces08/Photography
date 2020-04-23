@@ -80,10 +80,10 @@ function photoshootOverlay() {
 			'.photoshoot-overlay'
 		);
 
-		photoshoot.addEventListener('mouseover', () => {
+		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.classList.add('active');
 		});
-		photoshoot.addEventListener('mouseout', () => {
+		photoshoot.addEventListener('mouseleave', () => {
 			photoshootOverlay.classList.remove('active');
 		});
 	});

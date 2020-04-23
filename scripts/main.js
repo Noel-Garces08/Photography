@@ -75,10 +75,12 @@ function loadThumbnails() {
 
 function photoshootOverlay() {
 	const photoshoots = document.querySelectorAll('.photoshoot');
+	removeOverlays(photoshoots);
 	photoshoots.forEach((photoshoot) => {
 		const photoshootOverlay = photoshoot.querySelector(
 			'.photoshoot-overlay'
 		);
+
 		photoshoot.addEventListener('mouseover', () => {
 			photoshootOverlay.classList.add('active');
 		});
@@ -88,11 +90,23 @@ function photoshootOverlay() {
 	});
 }
 
+function removeOverlays(photoshoots) {
+	photoshoots.forEach((photoshoot) => {
+		const photoshootOverlay = photoshoot.querySelector(
+			'.photoshoot-overlay'
+		);
+		if (photoshootOverlay.classList.contains('active')) {
+			photoshootOverlay.classList.remove('active');
+		}
+	});
+}
+
 function setThumbnailOnClickListener(events, eventImages) {
 	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
 	viewAllButtons.forEach((button, index) => {
 		button.addEventListener('click', () => {
 			const imagesArray = [];
+
 			for (let i = 1; i <= eventImages[index].amount; i++) {
 				imagesArray.push(`${eventImages[index].name}${i}`);
 			}

@@ -1,5 +1,3 @@
-'use strict';
-
 function navSlide() {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');
@@ -95,12 +93,7 @@ function photoshootOverlay() {
 function setThumbnailOnClickListener(events, eventImages) {
 	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
 	viewAllButtons.forEach((button, index) => {
-		console.log(
-			viewAllButtons[index].parentElement.classList.contains('active')
-		);
-
 		button.addEventListener('click', () => {
-			viewAllButtons[index.parentElement.classList.remove('active')];
 			const imagesArray = [];
 
 			for (let i = 1; i <= eventImages[index].amount; i++) {
@@ -120,6 +113,7 @@ function setThumbnailOnClickListener(events, eventImages) {
 function loadEventPhotos() {
 	const event = JSON.parse(localStorage.getItem('event'));
 	let eventPhotos = ``;
+	console.log(event);
 	event.imagesArray.forEach((img) => {
 		eventPhotos += `
 					<div class="event">

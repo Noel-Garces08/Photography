@@ -75,18 +75,38 @@ function loadThumbnails() {
 
 function photoshootOverlay() {
 	const photoshoots = document.querySelectorAll('.photoshoot');
-	photoshoots.forEach((photoshoot) => {
+	photoshoots.forEach((photoshoot, index) => {
 		const photoshootOverlay = photoshoot.querySelector(
 			'.photoshoot-overlay'
 		);
 
 		photoshoot.addEventListener('mouseenter', () => {
-			photoshootOverlay.classList.add('active');
+			//Animate overlay
+			if (photoshootOverlay.style.animation) {
+				photoshootOverlay.style.animation = '';
+			} else {
+				photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
+					index / 7
+				}s`;
+			}
+		});
+
+		photoshoot.addEventListener('mouseenter', () => {
+			photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
+				index / 7
+			}s`;
 		});
 
 		photoshoot.addEventListener('mouseleave', () => {
-			photoshootOverlay.classList.remove('active');
+			photoshootOverlay.style.animation = '';
 		});
+		// photoshoot.addEventListener('mouseenter', () => {
+		// 	photoshootOverlay.classList.add('active');
+		// });
+
+		// photoshoot.addEventListener('mouseleave', () => {
+		// 	photoshootOverlay.classList.remove('active');
+		// });
 	});
 }
 

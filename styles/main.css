@@ -207,13 +207,14 @@ nav .burger div {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	opacity: 0;
+	/* opacity: 0; */
 	transition: all 0.5s ease-in;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	background: #0e0e0ebe;
 }
 
 .photoshoots-container .photoshoot-overlay h2 {
@@ -230,9 +231,9 @@ nav .burger div {
 }
 
 .photoshoots-container .photoshoot-overlay.active {
-	background: #0e0e0ebe;
-	transform: translateY(0);
-	opacity: 1;
+	/* background: #0e0e0ebe; */
+	/* transform: translateY(0);
+	opacity: 1; */
 }
 
 @media screen and (min-width: 768px) {
@@ -489,5 +490,16 @@ footer .footer-icons-container a {
 	to {
 		opacity: 1;
 		transform: translateX(0px);
+	}
+}
+
+@keyframes overlayFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }

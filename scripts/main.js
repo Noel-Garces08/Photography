@@ -93,9 +93,8 @@ function photoshootOverlay() {
 function setThumbnailOnClickListener(events, eventImages) {
 	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
 	viewAllButtons.forEach((button, index) => {
-		viewAllButtons[index].parentElement.classList.remove('active');
-
 		button.addEventListener('click', () => {
+			viewAllButtons[index].parentElement.classList.remove('active');
 			const imagesArray = [];
 
 			for (let i = 1; i <= eventImages[index].amount; i++) {

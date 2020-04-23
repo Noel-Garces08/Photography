@@ -89,9 +89,9 @@ function photoshootOverlay() {
 }
 
 function setThumbnailOnClickListener(events, eventImages) {
-	const thumbnails = document.querySelectorAll('.photoshoot-overlay');
-	thumbnails.forEach((thumbnail, index) => {
-		thumbnail.addEventListener('click', () => {
+	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
+	viewAllButtons.forEach((button, index) => {
+		button.addEventListener('click', () => {
 			const imagesArray = [];
 			for (let i = 1; i <= eventImages[index].amount; i++) {
 				imagesArray.push(`${eventImages[index].name}${i}`);
@@ -101,6 +101,7 @@ function setThumbnailOnClickListener(events, eventImages) {
 				event: events[index],
 				imagesArray,
 			};
+
 			localStorage.setItem('event', JSON.stringify(eventData));
 		});
 	});
@@ -125,14 +126,3 @@ function app() {
 }
 
 app();
-
-// for (let i = 1; i <= eventImages[index].amount; i++) {
-// 	const eventThumbnail = `
-// 			<div class="photoshoot">
-//                 <img src="./events/${event}/graduation.JPG" alt="">
-//                 <div class="photoshoot-overlay">
-//                     <h2>Rose Park</h2>
-//                 </div>
-//             </div>`
-// 	console.log(`${eventImages[index].name}${i}`);
-// }

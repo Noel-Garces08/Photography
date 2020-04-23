@@ -95,9 +95,8 @@ function removeOverlays(photoshoots) {
 		const photoshootOverlay = photoshoot.querySelector(
 			'.photoshoot-overlay'
 		);
-		if (photoshootOverlay.classList.contains('active')) {
-			photoshootOverlay.classList.remove('active');
-		}
+		photoshootOverlay.classList.remove('active');
+		console.log('removing');
 	});
 }
 

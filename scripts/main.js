@@ -80,16 +80,16 @@ function photoshootOverlay() {
 			'.photoshoot-overlay'
 		);
 
-		photoshoot.addEventListener('mouseenter', () => {
-			//Animate overlay
-			if (photoshootOverlay.style.animation) {
-				photoshootOverlay.style.animation = '';
-			} else {
-				photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
-					index / 7
-				}s`;
-			}
-		});
+		// photoshoot.addEventListener('mouseenter', () => {
+		// 	//Animate overlay
+		// 	if (photoshootOverlay.style.animation) {
+		// 		photoshootOverlay.style.animation = '';
+		// 	} else {
+		// 		photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
+		// 			index / 7
+		// 		}s`;
+		// 	}
+		// });
 
 		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${

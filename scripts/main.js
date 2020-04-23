@@ -80,12 +80,22 @@ function photoshootOverlay() {
 			'.photoshoot-overlay'
 		);
 
+		photoshoot.addEventListener('touchstart', () => {
+			photoshootOverlay.classList.add('active');
+		});
 		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.classList.add('active');
 		});
+
 		photoshoot.addEventListener('mouseleave', () => {
 			photoshootOverlay.classList.remove('active');
 		});
+		photoshoot.addEventListener('touchmove', () => {
+			photoshootOverlay.classList.remove('active');
+		});
+		// photoshoot.addEventListener('click', () => {
+		// 	photoshootOverlay.classList.remove('active');
+		// });
 	});
 }
 

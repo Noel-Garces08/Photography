@@ -80,9 +80,6 @@ function photoshootOverlay() {
 			'.photoshoot-overlay'
 		);
 
-		photoshoot.addEventListener('touchstart', () => {
-			photoshootOverlay.classList.add('active');
-		});
 		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.classList.add('active');
 		});
@@ -90,19 +87,16 @@ function photoshootOverlay() {
 		photoshoot.addEventListener('mouseleave', () => {
 			photoshootOverlay.classList.remove('active');
 		});
-		photoshoot.addEventListener('touchmove', () => {
-			photoshootOverlay.classList.remove('active');
-		});
-		// photoshoot.addEventListener('click', () => {
-		// 	photoshootOverlay.classList.remove('active');
-		// });
 	});
 }
 
 function setThumbnailOnClickListener(events, eventImages) {
+	const photoshootOverlay = document.querySelectorAll('.photoshoot-overlay');
 	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
 	viewAllButtons.forEach((button, index) => {
 		button.addEventListener('click', () => {
+			photoshootOverlay[index].classList.remove('active');
+
 			const imagesArray = [];
 
 			for (let i = 1; i <= eventImages[index].amount; i++) {

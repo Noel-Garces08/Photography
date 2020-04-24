@@ -202,12 +202,12 @@ nav .burger div {
 
 .photoshoots-container .photoshoot-overlay {
 	position: absolute;
+	opacity: 0;
 	transform: translateY(100%);
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	/* opacity: 0; */
 	transition: all 0.5s ease-in;
 	display: flex;
 	flex-direction: column;
@@ -494,12 +494,15 @@ footer .footer-icons-container a {
 }
 
 @keyframes overlayFadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(100%);
-	}
 	to {
 		transform: translateY(0);
 		opacity: 1;
+	}
+}
+
+@keyframes resetOverlay {
+	to {
+		opacity: 0;
+		transform: translateY(100%);
 	}
 }

@@ -20,7 +20,7 @@ function navSlide() {
 		//Animate Links
 		navLinks.forEach((link, index) => {
 			if (link.style.animation) {
-				link.style.animation = '';
+				link.style.animation = 'resetOverlay';
 			} else {
 				link.style.animation = `navLinkFadeIn 0.5s ease forwards ${
 					index / (7 * 0.7)
@@ -80,17 +80,6 @@ function photoshootOverlay() {
 			'.photoshoot-overlay'
 		);
 
-		// photoshoot.addEventListener('mouseenter', () => {
-		// 	//Animate overlay
-		// 	if (photoshootOverlay.style.animation) {
-		// 		photoshootOverlay.style.animation = '';
-		// 	} else {
-		// 		photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
-		// 			index / 7
-		// 		}s`;
-		// 	}
-		// });
-
 		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
 				index / 7
@@ -100,13 +89,6 @@ function photoshootOverlay() {
 		photoshoot.addEventListener('mouseleave', () => {
 			photoshootOverlay.style.animation = '';
 		});
-		// photoshoot.addEventListener('mouseenter', () => {
-		// 	photoshootOverlay.classList.add('active');
-		// });
-
-		// photoshoot.addEventListener('mouseleave', () => {
-		// 	photoshootOverlay.classList.remove('active');
-		// });
 	});
 }
 
@@ -143,10 +125,10 @@ function loadEventPhotos() {
 		document.querySelector('.photos-container').innerHTML = eventPhotos;
 	});
 }
-function app() {
+function init() {
 	navSlide();
 	loadThumbnails();
 	if (window.location.pathname === '/pages/event.html') loadEventPhotos();
 }
 
-app();
+init();

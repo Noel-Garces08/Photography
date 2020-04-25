@@ -1,3 +1,7 @@
+// window.onload = () => {
+// 	loadThumbnails();
+// };
+
 function navSlide() {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');
@@ -52,10 +56,9 @@ function loadThumbnails() {
 		},
 	];
 
-	if (window.location.pathname === '/index.html') {
-		let eventsThumbnail = ``;
-		events.forEach((event, index) => {
-			eventsThumbnail += `
+	let eventsThumbnail = ``;
+	events.forEach((event, index) => {
+		eventsThumbnail += `
 						<div class="photoshoot">
 							<img src="./events/${event}/${eventImages[index].name}1.JPG" alt="">
 							<div class="photoshoot-overlay"> 
@@ -63,14 +66,13 @@ function loadThumbnails() {
 								<a href='./pages/event.html'> View All Photos </a>
 							</div>
 						</div>`;
-			document.querySelector(
-				'.photoshoots-container'
-			).innerHTML = eventsThumbnail;
-		});
+		document.querySelector(
+			'.photoshoots-container'
+		).innerHTML = eventsThumbnail;
+	});
 
-		photoshootOverlay();
-		setThumbnailOnClickListener(events, eventImages);
-	}
+	photoshootOverlay();
+	setThumbnailOnClickListener(events, eventImages);
 }
 
 function photoshootOverlay() {
@@ -127,7 +129,6 @@ function loadEventPhotos() {
 }
 function init() {
 	navSlide();
-	loadThumbnails();
 	if (window.location.pathname === '/pages/event.html') loadEventPhotos();
 }
 

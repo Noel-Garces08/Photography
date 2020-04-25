@@ -1,8 +1,4 @@
-// window.onload = () => {
-// 	loadThumbnails();
-// };
-
-function navSlide() {
+const navAnimation = () => {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');
 	const navLinks = nav.querySelectorAll('li a');
@@ -32,16 +28,15 @@ function navSlide() {
 			}
 		});
 	});
-}
+};
 
-// * Load thubnails for Event Page
-function loadThumbnails() {
+const getEventsCoverPhoto = () => {
 	const events = [
 		'Christmas-Downtown',
 		'Leonardo-Graduation',
 		'Twink-Forest',
 	];
-	const eventImages = [
+	const eventsImages = [
 		{
 			name: 'christmas-downtown-',
 			amount: 2,
@@ -60,7 +55,7 @@ function loadThumbnails() {
 	events.forEach((event, index) => {
 		eventsThumbnail += `
 						<div class="photoshoot">
-							<img src="./events/${event}/${eventImages[index].name}1.JPG" alt="">
+							<img src="./events/${event}/${eventsImages[index].name}1.JPG" alt="">
 							<div class="photoshoot-overlay"> 
 								<h2>${event.replace(/-/g, ' ')}</h2>
 								<a href='./pages/event.html'> View All Photos </a>
@@ -71,16 +66,14 @@ function loadThumbnails() {
 		).innerHTML = eventsThumbnail;
 	});
 
-	photoshootOverlay();
-	setThumbnailOnClickListener(events, eventImages);
-}
+	setEventsCoverPhotoOverlay();
+	setOnClickListeners(events, eventsImages);
+};
 
-function photoshootOverlay() {
+const setEventsCoverPhotoOverlay = () => {
 	const photoshoots = document.querySelectorAll('.photoshoot');
 	photoshoots.forEach((photoshoot, index) => {
-		const photoshootOverlay = photoshoot.querySelector(
-			'.photoshoot-overlay'
-		);
+		let photoshootOverlay = photoshoot.querySelector('.photoshoot-overlay');
 
 		photoshoot.addEventListener('mouseenter', () => {
 			photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
@@ -92,13 +85,12 @@ function photoshootOverlay() {
 			photoshootOverlay.style.animation = '';
 		});
 	});
-}
+};
 
-function setThumbnailOnClickListener(events, eventImages) {
-	const viewAllButtons = document.querySelectorAll('.photoshoot-overlay a');
-	viewAllButtons.forEach((button, index) => {
-		button.addEventListener('click', () => {
-			viewAllButtons[index].parentElement.classList.remove('active');
+const setOnClickListeners = (events, eventImages) => {
+	const overlayLinks = document.querySelectorAll('.photoshoot-overlay a');
+	overlayLinks.forEach((link, index) => {
+		link.addEventListener('click', () => {
 			const imagesArray = [];
 
 			for (let i = 1; i <= eventImages[index].amount; i++) {
@@ -113,9 +105,9 @@ function setThumbnailOnClickListener(events, eventImages) {
 			localStorage.setItem('event', JSON.stringify(eventData));
 		});
 	});
-}
+};
 
-function loadEventPhotos() {
+const loadEventPhotos = () => {
 	const event = JSON.parse(localStorage.getItem('event'));
 	let eventPhotos = ``;
 	console.log(event);
@@ -126,11 +118,6 @@ function loadEventPhotos() {
 					</div>`;
 		document.querySelector('.photos-container').innerHTML = eventPhotos;
 	});
-}
-function init() {
-	navSlide();
-	// loadThumbnails() is called in body of index.html
-	// loadEventPhotos is called in body of event.html
-}
+};
 
-init();
+navAnimation();

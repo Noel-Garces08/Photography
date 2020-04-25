@@ -129,7 +129,8 @@ function loadEventPhotos() {
 }
 function init() {
 	navSlide();
-	if (window.location.pathname === '/pages/event.html') loadEventPhotos();
+	// loadThumbnails() is called in body of index.html
+	// loadEventPhotos is called in body of event.html
 }
 
 init();

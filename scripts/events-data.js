@@ -9,14 +9,14 @@ const events = [
 	{
 		typeOfEvent: 'Graduation Photoshoot',
 		nameOfEvent: 'Leonardos Graduation',
-		numberOfPhotos: 4,
+		numberOfPhotos: 7,
 		photos: 'img-',
 		pathDir: 'leonardos-graduation',
 	},
 	{
 		typeOfEvent: 'Forest Photoshoot',
 		nameOfEvent: 'Family In The Forest',
-		numberOfPhotos: 7,
+		numberOfPhotos: 4,
 		photos: 'img-',
 		pathDir: 'family-in-the-forest',
 	},

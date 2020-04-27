@@ -31,43 +31,23 @@ const navAnimation = () => {
 };
 
 const getEventsCoverPhoto = () => {
-	const events = [
-		'Christmas-Downtown',
-		'Leonardo-Graduation',
-		'Twink-Forest',
-	];
-	const eventsImages = [
-		{
-			name: 'christmas-downtown-',
-			amount: 2,
-		},
-		{
-			name: 'leonardo-graduation-',
-			amount: 1,
-		},
-		{
-			name: 'twink-forest-',
-			amount: 1,
-		},
-	];
-
-	let eventsThumbnail = ``;
+	let coverPhotos = ``;
 	events.forEach((event, index) => {
-		eventsThumbnail += `
+		coverPhotos += `
 						<div class="photoshoot">
-							<img src="./events/${event}/${eventsImages[index].name}1.JPG" alt="">
-							<div class="photoshoot-overlay"> 
-								<h2>${event.replace(/-/g, ' ')}</h2>
+							<img src="./events/${event.pathDir}/${event.photos}1.JPG" alt="">
+							<div class="photoshoot-overlay">
+								<h2>${event.nameOfEvent}</h2>
 								<a href='./pages/event.html'> View All Photos </a>
 							</div>
 						</div>`;
 		document.querySelector(
 			'.photoshoots-container'
-		).innerHTML = eventsThumbnail;
+		).innerHTML = coverPhotos;
 	});
 
 	setEventsCoverPhotoOverlay();
-	setOnClickListeners(events, eventsImages);
+	setOnClickListeners(events);
 };
 
 const setEventsCoverPhotoOverlay = () => {
@@ -87,22 +67,23 @@ const setEventsCoverPhotoOverlay = () => {
 	});
 };
 
-const setOnClickListeners = (events, eventImages) => {
+const setOnClickListeners = (events) => {
 	const overlayLinks = document.querySelectorAll('.photoshoot-overlay a');
 	overlayLinks.forEach((link, index) => {
 		link.addEventListener('click', () => {
-			const imagesArray = [];
+			// const imagesArray = [];
 
-			for (let i = 1; i <= eventImages[index].amount; i++) {
-				imagesArray.push(`${eventImages[index].name}${i}`);
-			}
+			// for (let i = 1; i <= eventImages[index].amount; i++) {
+			// 	imagesArray.push(`${eventImages[index].name}${i}`);
+			// }
 
-			const eventData = {
-				event: events[index],
-				imagesArray,
-			};
+			// const eventData = {
+			// 	event: events[index],
+			// 	imagesArray,
+			// };
 
-			localStorage.setItem('event', JSON.stringify(eventData));
+			localStorage.setItem('event', JSON.stringify(events[index]));
+			console.log(events[index]);
 		});
 	});
 };
@@ -111,13 +92,13 @@ const loadEventPhotos = () => {
 	const event = JSON.parse(localStorage.getItem('event'));
 	let eventPhotos = ``;
 	console.log(event);
-	event.imagesArray.forEach((img) => {
+	for (let index = 1; index <= event.numberOfPhotos; index++) {
 		eventPhotos += `
 					<div class="event">
-						<img src="./../events/${event.event}/${img}.JPG" alt="">
+						<img src="./../events/${event.pathDir}/${event.photos}${index}.JPG" alt="">
 					</div>`;
 		document.querySelector('.photos-container').innerHTML = eventPhotos;
-	});
+	}
 };
 
 navAnimation();

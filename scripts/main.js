@@ -1,5 +1,6 @@
 let loader = document.querySelector('.loader');
 window.addEventListener('load', () => {
+	// remove the elemetn from html
 	setTimeout(() => {
 		loader.parentElement.removeChild(loader);
 	}, 1000);

@@ -15,6 +15,37 @@ body {
 	background: #f5f5f5;
 }
 
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: calc(100vh - (10vh + 3rem));
+	z-index: 1;
+	background: #f5f5f5;
+}
+
+.loader > span {
+	display: inline-block;
+	background: purple;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	margin: 0 8px;
+	transform: translate3d(0);
+	animation: bounce 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2) {
+	background: palevioletred;
+	animation-delay: 0.2s;
+}
+
+.loader > span:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
 main {
 	padding: 3rem 1.5rem;
 }
@@ -22,6 +53,9 @@ main {
 @media screen and (min-width: 768px) {
 	main {
 		padding: 3.5rem 1.5rem;
+	}
+	.loader {
+		height: 100%;
 	}
 }
 
@@ -33,6 +67,10 @@ main {
 
 	#flor {
 		padding: 3rem 2.5%;
+	}
+
+	.loader {
+		height: 100%;
 	}
 }
 
@@ -52,6 +90,7 @@ nav .nav-logo {
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
+	z-index: 2;
 }
 
 nav .nav-links {
@@ -86,6 +125,7 @@ nav .nav-links a {
 nav .burger {
 	display: block;
 	cursor: pointer;
+	z-index: 2;
 }
 
 nav .burger div {
@@ -181,6 +221,10 @@ nav .burger div {
 }
 
 /* * EVENTS SECTION  */
+#latest-photoshoots {
+	/* height: 100%; */
+	position: relative;
+}
 .photoshoots-container {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -192,6 +236,7 @@ nav .burger div {
 	cursor: pointer;
 	overflow: hidden;
 	position: relative;
+	background: #f5f5f5;
 }
 
 .photoshoots-container .photoshoot img {
@@ -239,6 +284,9 @@ nav .burger div {
 @media screen and (min-width: 768px) {
 	.photoshoots-container {
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+	#latest-photoshoots {
+		height: 100%;
 	}
 }
 
@@ -504,5 +552,13 @@ footer .footer-icons-container a {
 	to {
 		opacity: 0;
 		transform: translateY(100%);
+	}
+}
+
+@keyframes bounce {
+	to {
+		width: 16px;
+		height: 16px;
+		transform: translate3d(0, -16px, 0);
 	}
 }

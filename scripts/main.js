@@ -1,3 +1,10 @@
+let loader = document.querySelector('.loader');
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		// loader.parentElement.removeChild(loader);
+	}, 1000);
+});
+
 const navAnimation = () => {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');

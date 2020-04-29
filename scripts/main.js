@@ -1,7 +1,7 @@
 let loader = document.querySelector('.loader');
 window.addEventListener('load', () => {
 	setTimeout(() => {
-		// loader.parentElement.removeChild(loader);
+		loader.parentElement.removeChild(loader);
 	}, 1000);
 });
 

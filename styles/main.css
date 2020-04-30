@@ -34,10 +34,6 @@ main {
 	#flor {
 		padding: 3rem 2.5%;
 	}
-
-	.loader {
-		height: 100%;
-	}
 }
 
 /* * NAVIGATION */
@@ -56,7 +52,6 @@ nav .nav-logo {
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
-	/* z-index: 2; */
 }
 
 nav .nav-links {

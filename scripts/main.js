@@ -46,42 +46,13 @@ const getEventsCoverPhoto = () => {
 		).innerHTML = coverPhotos;
 	});
 
-	setEventsCoverPhotoOverlay();
 	setOnClickListeners(events);
-};
-
-const setEventsCoverPhotoOverlay = () => {
-	const photoshoots = document.querySelectorAll('.photoshoot');
-	photoshoots.forEach((photoshoot, index) => {
-		let photoshootOverlay = photoshoot.querySelector('.photoshoot-overlay');
-
-		photoshoot.addEventListener('mouseenter', () => {
-			photoshootOverlay.style.animation = `overlayFadeIn 0.5s ease forwards ${
-				index / 7
-			}s`;
-		});
-
-		photoshoot.addEventListener('mouseleave', () => {
-			photoshootOverlay.style.animation = '';
-		});
-	});
 };
 
 const setOnClickListeners = (events) => {
 	const overlayLinks = document.querySelectorAll('.photoshoot-overlay a');
 	overlayLinks.forEach((link, index) => {
 		link.addEventListener('click', () => {
-			// const imagesArray = [];
-
-			// for (let i = 1; i <= eventImages[index].amount; i++) {
-			// 	imagesArray.push(`${eventImages[index].name}${i}`);
-			// }
-
-			// const eventData = {
-			// 	event: events[index],
-			// 	imagesArray,
-			// };
-
 			localStorage.setItem('event', JSON.stringify(events[index]));
 			console.log(events[index]);
 		});

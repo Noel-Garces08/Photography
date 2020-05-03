@@ -48,6 +48,8 @@ form.addEventListener('submit', (e) => {
 		e.preventDefault();
 		console.log(errorMessages);
 	}
+
+	Fet;
 });
 
 const navAnimation = () => {

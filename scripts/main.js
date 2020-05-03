@@ -1,3 +1,55 @@
+const form = document.querySelector('.contact-form');
+const errorElement = document;
+let firstName = form.elements.namedItem('firstName');
+let lastName = form.elements.namedItem('lastName');
+let email = form.elements.namedItem('_replyto');
+let message = form.elements.namedItem('message');
+
+form.addEventListener('submit', (e) => {
+	let errorMessages = [];
+	if (
+		firstName.value === '' ||
+		firstName.value === null ||
+		lastName.value === '' ||
+		lastName.value === null
+	) {
+		if (firstName.value === '' || firstName.value === null) {
+			firstName.style.borderColor = 'red';
+		} else {
+			firstName.style.borderColor = '';
+		}
+
+		if (lastName.value === '' || lastName.value === null) {
+			lastName.style.borderColor = 'red';
+		} else {
+			lastName.style.borderColor = '';
+		}
+		errorMessages.push('name is required');
+	}
+
+	if (email.value === '' || email.value === null) {
+		errorMessages.push('please enter an email');
+		email.style.borderColor = 'red';
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email.value)) {
+		errorMessages.push('please enter a valid email');
+		email.style.borderColor = 'red';
+	} else {
+		email.style.borderColor = '';
+	}
+
+	if (message.value === '' || message.value === null) {
+		errorMessages.push('please enter message');
+		message.style.borderColor = 'red';
+	} else {
+		message.style.borderColor = '';
+	}
+
+	if (errorMessages.length > 0) {
+		e.preventDefault();
+		console.log(errorMessages);
+	}
+});
+
 const navAnimation = () => {
 	const burger = document.querySelector('.burger');
 	const nav = document.querySelector('.nav-links');

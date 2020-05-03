@@ -1,4 +1,3 @@
-console.log(window.location.pathname);
 if (window.location.pathname === '/pages/contact.html') {
 	const form = document.querySelector('.contact-form');
 	// const errorElement = document;

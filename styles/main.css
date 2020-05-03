@@ -370,6 +370,58 @@ nav .burger div {
 	}
 }
 
+/* * GEAR PAGE */
+.gear-container .gear-img img {
+	object-fit: cover;
+	object-position: top;
+	width: 100%;
+	height: 100%;
+}
+
+.gear-container .gear-info {
+	margin: 3.5rem 0;
+}
+
+.gear-container .gear-info h2 {
+	color: #333333;
+	font-size: 2.3rem;
+	font-weight: 500;
+	margin: 1.7rem 0;
+}
+
+.gear-container .gear-info h4 {
+	color: #333333;
+	font-size: 1.1rem;
+	font-weight: 500;
+	/* padding-bottom: 1rem; */
+}
+
+.gear-container .gear-info ul li {
+	margin: 1.5rem 0;
+	font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+	.gear-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2rem;
+	}
+
+	.gear-container .gear-info {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.gear-container .gear-img {
+		/* height: 27rem; */
+		grid-column: 2/3;
+	}
+}
+
+@media screen and (min-width: 992px) {
+}
+
 /* * FOOTER SECTION */
 footer {
 	display: flex;
